@@ -3,14 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script>
-        // 尝试自动跳转邮件客户端
-        window.location.href = 'mailto:xlijexe01@clubmed.com';
-        // 1秒后显示手动按钮（iOS需用户点击）
-        setTimeout(function() {
-            document.getElementById('manual-prompt').style.display = 'block';
-        }, 1000);
-    </script>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
         .btn {
@@ -22,11 +14,18 @@
             display: inline-block;
             margin-top: 15px;
         }
+        .warning { color: red; margin: 20px 0; }
     </style>
 </head>
 <body>
-    <div id="manual-prompt" style="display: none;">
-        <p>点击下方按钮自动填写总经理邮箱：</p>
+    <!-- 直接显示操作提示（不再依赖自动跳转） -->
+    <div id="manual-prompt">
+        <div class="warning">
+            ⚠️ 检测到微信浏览限制，请按以下步骤操作：
+            <br>1. 点击右上角 •••
+            <br>2. 选择「在浏览器打开」
+        </div>
+        <p>点击按钮自动填写总经理邮箱：</p>
         <a href="mailto:xlijexe01@clubmed.com" class="btn">发送邮件</a>
     </div>
 </body>
